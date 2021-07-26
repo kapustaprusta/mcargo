@@ -1,3 +1,3 @@
-module github.com/kapustaprusta/mcargo/v2
+module github.com/kapustaprusta/mcargo
 
 go 1.16

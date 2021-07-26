@@ -1,4 +1,4 @@
-package main
+package auth
 
 import (
 	"fmt"
@@ -16,4 +16,12 @@ func TestMakeChallenger(t *testing.T) {
 	fmt.Println(len(in), len(out))
 
 	fmt.Println(string(makeCodeChallenge(in)))
+}
+
+func BenchmarkMakeChallenger(b *testing.B) {
+	in := []rune("abcsdbcjksndsjnsdf")
+
+	for i := 0; i < b.N; i++ {
+		makeCodeChallenge(in)
+	}
 }

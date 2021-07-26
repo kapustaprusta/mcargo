@@ -1,4 +1,4 @@
-package main
+package auth
 
 import (
 	"fmt"
@@ -16,4 +16,10 @@ func TestGetVerifierLen(t *testing.T) {
 
 func TestMakeVerifier(t *testing.T) {
 	fmt.Println(string(makeCodeVerifier()))
+}
+
+func BenchmarkMakeVerifier(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		makeCodeVerifier()
+	}
 }
