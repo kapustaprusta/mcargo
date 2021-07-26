@@ -11,7 +11,7 @@ func hashRunes(in []rune) []byte {
 	return hashSum[:]
 }
 
-func makeCodeChallenge(in []rune) []byte {
+func MakeCodeChallenge(in []rune) []byte {
 	inAsHashSum := hashRunes(in)
 	inAsBase64 := make([]byte, base64.StdEncoding.EncodedLen(len(inAsHashSum)))
 	base64.StdEncoding.Encode(inAsBase64, inAsHashSum)

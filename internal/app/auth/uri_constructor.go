@@ -14,22 +14,22 @@ var (
 	stateTmpl               = "state=%s"
 )
 
-type uriParams struct {
-	clientId            string
-	responseType        string
-	redirectUri         string
-	codeChallengeMethod string
-	codeChallenge       string
-	state               string
+type UriParams struct {
+	ClientId            string
+	ResponseType        string
+	RedirectUri         string
+	CodeChallengeMethod string
+	CodeChallenge       string
+	State               string
 }
 
-func constructURI(params uriParams) string {
-	clientIdParam := fmt.Sprintf(clientIdTmpl, params.clientId)
-	responseTypeParam := fmt.Sprintf(responseTypeTmpl, params.responseType)
-	redirectUriParam := fmt.Sprintf(redirectUriTmpl, params.redirectUri)
-	codeChallengeMethodParam := fmt.Sprintf(codeChallengeMethodTmpl, params.codeChallengeMethod)
-	codeChallengeParam := fmt.Sprintf(codeChallengeTmpl, params.codeChallenge)
-	stateParam := fmt.Sprintf(stateTmpl, params.state)
+func ConstructURI(params UriParams) string {
+	clientIdParam := fmt.Sprintf(clientIdTmpl, params.ClientId)
+	responseTypeParam := fmt.Sprintf(responseTypeTmpl, params.ResponseType)
+	redirectUriParam := fmt.Sprintf(redirectUriTmpl, params.RedirectUri)
+	codeChallengeMethodParam := fmt.Sprintf(codeChallengeMethodTmpl, params.CodeChallengeMethod)
+	codeChallengeParam := fmt.Sprintf(codeChallengeTmpl, params.CodeChallenge)
+	stateParam := fmt.Sprintf(stateTmpl, params.State)
 
 	return baseUri + "?" + clientIdParam +
 		"&" + responseTypeParam +

@@ -33,7 +33,7 @@ func getCodeVerifierLen() int {
 	return verifierMinLength + rand.Intn(verifierMaxLength-verifierMinLength)
 }
 
-func makeCodeVerifier() []rune {
+func MakeCodeVerifier() []rune {
 	verifierLen := getCodeVerifierLen()
 	verifier := make([]rune, verifierLen)
 	shuffledAllowedSymbols := shuffleRunes(allowedSymbols)

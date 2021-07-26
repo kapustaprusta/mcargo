@@ -15,11 +15,11 @@ func TestGetVerifierLen(t *testing.T) {
 }
 
 func TestMakeVerifier(t *testing.T) {
-	fmt.Println(string(makeCodeVerifier()))
+	fmt.Println(string(MakeCodeVerifier()))
 }
 
 func BenchmarkMakeVerifier(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		makeCodeVerifier()
+		MakeCodeVerifier()
 	}
 }
