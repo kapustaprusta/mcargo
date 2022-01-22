@@ -43,9 +43,9 @@ func (l *Loginer) Url(ctx context.Context) (string, error) {
 		"show_dialog=true" +
 		"response_type=code&" +
 		"scope=" + authScopes + "&" +
+		"state=" + generateRandomString(16)
 		"redirect_uri=" + redirectUri + "&" +
 		"client_id=" + l.config.clientId + "&" +
-		"state=" + generateRandomString(16) + "&"
 
 	return url, nil
 }
