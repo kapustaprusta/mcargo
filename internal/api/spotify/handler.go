@@ -1,7 +1,6 @@
 package spotify
 
 import (
-	"context"
 	"net/http"
 )
 
@@ -15,8 +14,4 @@ func NewHandler(config *Config, httpClient *http.Client) *Handler {
 		config:     config,
 		httpClient: httpClient,
 	}
-}
-
-func (h *Handler) Authenticate(ctx context.Context) error {
-	return nil
 }
